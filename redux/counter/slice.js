@@ -10,9 +10,10 @@ export const counterSlice = createSlice({
   // 一個切片裡面會有名字、初始狀態、reducer(裡面放你想要怎麼更改state的方法)
   name: "counter", // 切片的名稱
   initialState, // 切片包含的 state
-  reducer: {
+  reducers: {
     // 切片要做的事情(函式)
     increment: state => {
+      console.log("Hit");
       state.count += 1;
     },
     decrement: state => {
@@ -23,5 +24,6 @@ export const counterSlice = createSlice({
 
 // 這裡的 increment 和 decrement 是 actions 裡面的東東
 // 不是 reducer 裡面的東東
+// 
 export const { increment, decrement } = counterSlice.actions;
 export default counterSlice.reducer;
